@@ -109,8 +109,9 @@ export class HomeComponent {
     this.isDownloading = true;
     html2canvas(document.getElementById('resultado')!)
       .then((canvas) => {
+        const name = `Ticket#${this.totalTickets}-AEA-RFO-QR.jpg`;
         const link = document.createElement('a');
-        link.download = 'flyer_con_QR.jpg';
+        link.download = name;
         link.href = canvas
           .toDataURL('image/jpeg')
           .replace(/^data:image\/[^;]/, 'data:application/octet-stream');
@@ -126,5 +127,11 @@ export class HomeComponent {
         });
         this.isDownloading = false;
       });
+  }
+
+  logout() {
+    this.authService.logout().finally(() => {
+      window.location.reload();
+    });
   }
 }

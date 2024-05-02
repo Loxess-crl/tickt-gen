@@ -49,4 +49,11 @@
   <ng-template #Loading>
     <p-progressSpinner strokeWidth="2"></p-progressSpinner>
   </ng-template>
+
+  <p-button
+    [raised]="true"
+    label="Cerrar sesión"
+    (onClick)="logout()"
+    [loading]="isDownloading"
+  ></p-button>
 </div>
