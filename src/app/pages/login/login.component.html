@@ -1,0 +1,70 @@
+<div class="body">
+  <div class="box">
+    <div class="inner-box">
+      <div class="forms-wrap">
+        <form
+          (ngSubmit)="onSubmit()"
+          [formGroup]="form"
+          class="sign-in-form active"
+        >
+          <div class="heading">
+            <div class="wave-container active">
+              <h2 class="wave-heading active">Bienvenido de vuelta</h2>
+            </div>
+            <h6>No te has registrado?</h6>
+            <a class="toggle" href="#">Regístrate</a>
+          </div>
+
+          <div class="actual-form">
+            <div class="form-field">
+              <p-floatLabel>
+                <input
+                  type="email"
+                  pInputText
+                  id="email"
+                  formControlName="email"
+                />
+                <label for="email">Email</label>
+              </p-floatLabel>
+
+              <validator-error-message [controlName]="form.get('email')!" />
+            </div>
+            <div class="form-field">
+              <p-floatLabel>
+                <input
+                  type="password"
+                  pInputText
+                  id="password"
+                  formControlName="password"
+                />
+                <label for="password">Password</label>
+              </p-floatLabel>
+
+              <validator-error-message [controlName]="form.get('password')!" />
+            </div>
+            <p-button
+              type="submit"
+              label="Ingresar"
+              size="small"
+              [raised]="true"
+              severity="success"
+              [loading]="isLoading"
+              [style]="{ width: '100%' }"
+              [disabled]="form.invalid"
+            ></p-button>
+            <p-button
+              label="Login with Google"
+              size="small"
+              [raised]="true"
+              severity="danger"
+              icon="pi pi-google"
+              [loading]="isLoading"
+              [style]="{ width: '100%' }"
+              (onClick)="loginWithGoogle()"
+            ></p-button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

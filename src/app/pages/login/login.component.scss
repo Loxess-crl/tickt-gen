@@ -1,0 +1,191 @@
+.display-none {
+  display: none;
+}
+
+/* FORM INIT */
+
+.body {
+  height: 100vh;
+  background-image: linear-gradient(
+    to left bottom,
+    #69bf6e,
+    #58a35c,
+    #47884b,
+    #376d3a,
+    #27542a
+  );
+  // background-color: #388e3c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .box {
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+
+    margin-inline: 1rem;
+
+    height: 100%;
+    max-height: 95%;
+
+    width: 100%;
+    max-width: 95%;
+
+    border-radius: 1.25rem;
+    // box-shadow: 0 60px 40px -30px rgba(0, 0, 0, 0.27);
+    background-color: #e2e2e2;
+    transition: all 0.8s ease-in-out;
+    max-width: 650px;
+
+    .inner-box {
+      position: static;
+      padding: 1rem;
+      min-width: 90%;
+      width: 100%;
+      // height: revert;
+      height: 100%;
+      // top: 50%;
+      // left: 50%;
+
+      .forms-wrap {
+        position: revert;
+        height: 100%;
+        width: 100%;
+        // height: auto;
+        transition: 0.8s ease-in-out;
+
+        form {
+          width: 90%;
+          max-width: revert;
+          margin: 0 auto;
+          height: 100%;
+          padding: 0.75rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 1rem;
+          overflow: hidden;
+          transition: justify-content 0.5s ease-in-out;
+
+          &.active {
+            margin-top: 4rem;
+            justify-content: start;
+          }
+
+          .logo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            justify-content: center;
+            transition: height 0.5s ease-in-out, flex-direction 0.5s ease-in-out;
+            margin-block: 1.5rem;
+            height: 8.7rem;
+
+            &.active {
+              height: 2.2rem;
+              flex-direction: row;
+              justify-content: start;
+
+              img {
+                margin-right: 0.5rem;
+                width: 2.1rem;
+              }
+
+              // h4 {
+              //   color: map-get(ap.$secondary-palette, 900);
+              // }
+            }
+
+            img {
+              width: 6.5rem;
+              margin-right: 0.3rem;
+              transition: width 0.5s ease-in-out, margin-right 0.5s ease-in-out;
+            }
+
+            h4 {
+              font-size: 1.2rem;
+              // margin-top: -9px;
+              letter-spacing: -0.5px;
+              color: #151111;
+            }
+          }
+
+          .heading {
+            .wave-container {
+              overflow: hidden;
+              height: 0;
+              transition: height 0.5s ease-in-out;
+              &.active {
+                height: 60px;
+              }
+              .wave-heading {
+                // color: map-get(ap.$primary-palette, 400);
+                opacity: 0;
+                transform: translateY(-10px);
+                transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+                &.active {
+                  opacity: 1;
+                  transform: translateY(0);
+                }
+              }
+            }
+            h2 {
+              font-size: 2rem;
+              font-weight: 600;
+              color: #485642;
+            }
+
+            h6 {
+              color: #86957e;
+              font-weight: 400;
+              font-size: 0.95rem;
+              display: inline;
+            }
+
+            .toggle {
+              color: #151111;
+              margin-left: 0.5rem;
+              text-decoration: none;
+              font-size: 1rem;
+              font-weight: 500;
+              transition: 0.3s;
+            }
+
+            .toggle:hover {
+              color: #8371fd;
+            }
+          }
+
+          .actual-form {
+            display: flex;
+            flex-direction: column;
+            margin-top: 1rem;
+            gap: 1.5rem;
+            transition: height 0.5s ease-in-out, opacity 0.45s linear;
+            input {
+              width: 100%;
+            }
+          }
+
+          .btnIngresar button {
+            // background-color: map-get(ap.$primary-palette, 300);
+            background-color: #151111;
+            color: #fff;
+            margin-top: 0.2rem;
+            width: 100%;
+          }
+
+          .spinner {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 200px;
+          }
+        }
+      }
+    }
+  }
+}
