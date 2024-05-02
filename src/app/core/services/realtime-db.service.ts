@@ -10,8 +10,8 @@ export class RealtimeDbService {
 
   async setItem(path: string, value: any) {
     await this.db
-      .object('/')
-      .set({ [path]: value })
+      .object(path)
+      .set(value)
       .then((res) => {
         console.log(res);
       });

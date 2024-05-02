@@ -1,3 +1,52 @@
 <div class="home">
   <h1>Generador de QR</h1>
+
+  <ng-container *ngIf="totalTickets >= 0; else Loading">
+    <div class="body">
+      <h2>Total de tickets generados: {{ totalTickets }}</h2>
+      <h2>Total de tickets usados: {{ totalTicketsUsados }}</h2>
+    </div>
+
+    <p-button
+      [raised]="true"
+      label="Generar QR"
+      (onClick)="showForm = true"
+    ></p-button>
+    <ng-container *ngIf="showForm">
+      <div class="form">
+        <form action="">
+          <p-floatLabel>
+            <input
+              pInputText
+              id="text"
+              [(ngModel)]="qrDataText"
+              [ngModelOptions]="{ standalone: true }"
+            />
+            <label for="text">Nombre</label>
+          </p-floatLabel>
+        </form>
+      </div>
+
+      <p-button
+        [raised]="true"
+        label="Generar flyer"
+        (onClick)="generarQR()"
+      ></p-button>
+
+      <div class="result-content" *ngIf="qrCodeDataUrl">
+        <h3>Flyer con QR:</h3>
+        <div id="resultado"></div>
+        <p-button
+          [raised]="true"
+          label="Descargar Flyer con QR"
+          (onClick)="descargarFlyer()"
+          [loading]="isDownloading"
+        ></p-button>
+      </div>
+    </ng-container>
+  </ng-container>
+
+  <ng-template #Loading>
+    <p-progressSpinner strokeWidth="2"></p-progressSpinner>
+  </ng-template>
 </div>

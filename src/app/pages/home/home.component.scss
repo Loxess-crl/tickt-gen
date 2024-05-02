@@ -1,4 +1,22 @@
 .home {
   height: 100vh;
   padding: 1rem;
+
+  .form {
+    margin-top: 2rem;
+    padding: 1rem;
+  }
+}
+
+#resultado {
+  width: 1280px;
+  height: 1280px;
+}
+
+.result-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
